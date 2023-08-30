@@ -21,10 +21,6 @@ const AppBar = () => {
       <ScrollView horizontal>
         <AppBarTab text={"Repositories"} to="/" />
         <AppBarTab text={"Sign in"} to="/signIn" style={{ marginStart: 5 }} />
-        <AppBarTab text={"Sign in"} to="/signIn" style={{ marginStart: 5 }} />
-        <AppBarTab text={"Sign in"} to="/signIn" style={{ marginStart: 5 }} />
-        <AppBarTab text={"Sign in"} to="/signIn" style={{ marginStart: 5 }} />
-        <AppBarTab text={"Sign in"} to="/signIn" style={{ marginStart: 5 }} />
       </ScrollView>
     </View>
   );
