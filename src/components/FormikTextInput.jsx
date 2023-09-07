@@ -34,6 +34,7 @@ const FormikTextInput = ({ name, ...props }) => {
         value={field.value}
         {...props}
         style={[styles.baseInput, showError && styles.errorInput, props.style]}
+        autoCapitalize="none"
       />
       {showError && (
         <Text style={styles.errorText} color={"error"}>

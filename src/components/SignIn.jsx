@@ -4,6 +4,8 @@ import Text from "./Text";
 import theme from "../theme";
 import { Formik } from "formik";
 import FormikTextInput from "./FormikTextInput";
+import useSignIn from "../hooks/useSignIn";
+import { useNavigate } from "react-router-native";
 
 const validationSchema = yup.object().shape({
   username: yup.string().required("Username is required"),
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   disabledButton: {
-    backgroundColor: theme.colors.errorColor,
+    backgroundColor: theme.colors.disabledPrimary,
   },
 });
 
@@ -39,8 +41,15 @@ const initialValues = {
 };
 
 const SignIn = () => {
-  const submitHandler = (values) => {
-    console.log(values);
+  const [signIn] = useSignIn();
+  const nav = useNavigate();
+  const submitHandler = async (values) => {
+    try {
+      await signIn(values.username, values.password);
+      nav("/");
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -71,7 +80,7 @@ const SignIn = () => {
               placeholder="Password"
               style={{ marginTop: 10 }}
               autoComplete="off"
-              autoCorrec={false}
+              autoCorrecr={false}
             />
             <Pressable
               onPress={props.handleSubmit}
