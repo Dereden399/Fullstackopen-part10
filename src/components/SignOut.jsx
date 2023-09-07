@@ -27,6 +27,7 @@ const SignOut = () => {
       apolloClient.resetStore();
       nav("/signin");
     };
+
     func();
   }, []);
   return (
