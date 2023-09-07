@@ -6,6 +6,7 @@ const theme = {
     textSecondary: '#586069',
     textWhite: "#fafafa",
     primary: '#0366d6',
+    disabledPrimary: "#89add6",
     containerColor: "#e1e4e8",
     cardColor: "white",
     errorColor: "#d73a4a",
