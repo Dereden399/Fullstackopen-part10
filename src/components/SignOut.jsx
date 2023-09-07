@@ -22,11 +22,13 @@ const SignOut = () => {
   const authStorage = useAuthStorage();
 
   useEffect(() => {
+  useEffect(() => {
     const func = async () => {
       await authStorage.removeAccessToken();
       apolloClient.resetStore();
       nav("/signin");
     };
+    func();
 
     func();
   }, []);
